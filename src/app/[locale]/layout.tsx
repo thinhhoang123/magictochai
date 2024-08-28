@@ -4,6 +4,7 @@ import '../globals.css';
 import { cn } from '@/lib/utils';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
+import Layout from '@/components/layout';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -33,7 +34,7 @@ export default async function RootLayout({
         )}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Layout>{children}</Layout>
         </NextIntlClientProvider>
       </body>
     </html>
