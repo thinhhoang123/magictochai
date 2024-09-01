@@ -1,4 +1,4 @@
-import { Bell, Package2 } from 'lucide-react';
+'use client';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import {
@@ -9,52 +9,20 @@ import {
   CardTitle,
 } from '../ui/card';
 import { Button } from '../ui/button';
+import navItems from '@/constants/nav-items';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import ActiveLink from '../shared/active-link';
 
-export default function SideBar() {
+export default function AppSideBar() {
   const t = useTranslations('TITLE');
-  const headerItems = [
-    {
-      title: t('HOME'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-    {
-      title: t('RESTORE_IMAGE'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-    {
-      title: t('GENERATE_IMAGE'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-    {
-      title: t('OBJECT_RECOLOR'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-    {
-      title: t('OBJECT_RECOLOR'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-    {
-      title: t('OBJECT_REMOVAL'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-    {
-      title: t('BACKGROUND_REMOVAL'),
-      icon: <Bell className="h-4 w-4" />,
-      link: '#',
-    },
-  ];
   return (
     <div className="hidden border-r bg-muted/40 md:block">
       <div className="flex h-full max-h-screen flex-col gap-2">
         <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
           <Link href="/" className="flex items-center gap-2 font-semibold">
-            <Package2 className="h-6 w-6" />
+            {/* <Package2 className="h-6 w-6" /> */}
+            <Image src="/logo.svg" alt="logo" height={30} width={30} />
             <span className="">Magic Touch AI</span>
           </Link>
           {/* <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
@@ -64,16 +32,12 @@ export default function SideBar() {
         </div>
         <div className="flex-1">
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-            {headerItems.map((item) => {
+            {navItems.map((item) => {
               return (
-                <Link
-                  href={item.link}
-                  key={item.title}
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                >
+                <ActiveLink href={item.link} key={item.title}>
                   {item.icon}
-                  {item.title}
-                </Link>
+                  {t(item.title)}
+                </ActiveLink>
               );
             })}
           </nav>
