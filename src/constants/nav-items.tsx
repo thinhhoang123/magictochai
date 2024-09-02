@@ -13,7 +13,7 @@ const headerItems: IHeaderItems[] = [
   {
     title: 'HOME',
     icon: <House className="h-4 w-4" />,
-    link: '/',
+    link: '/home',
   },
   {
     title: 'RESTORE_IMAGE',

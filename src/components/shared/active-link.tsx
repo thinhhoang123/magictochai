@@ -11,7 +11,6 @@ export default function ActiveLink({
   href: string;
 }) {
   const pathname = usePathname();
-  console.log(pathname.split('/'));
   const isActive = pathname.includes(href);
   return (
     <Link
