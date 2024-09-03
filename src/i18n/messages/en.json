@@ -1,0 +1,10 @@
+{
+  "TITLE": {
+    "HOME": "Home",
+    "RESTORE_IMAGE": "Restore Image",
+    "GENERATE_IMAGE": "Generate Image",
+    "OBJECT_RECOLOR": "Object Recolor",
+    "OBJECT_REMOVAL": "Object Removal",
+    "BACKGROUND_REMOVAL": "Background Removal"
+  }
+}
