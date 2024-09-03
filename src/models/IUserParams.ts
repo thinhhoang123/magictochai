@@ -8,8 +8,8 @@ export interface ICreateUserParams {
 }
 
 export interface IUpdateUserParams {
-  firstName: string;
-  lastName: string;
+  firstName: string | null;
+  lastName: string | null;
   username: string;
   photo: string;
 }
