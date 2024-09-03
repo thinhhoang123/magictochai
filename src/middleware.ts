@@ -18,8 +18,8 @@ export default clerkMiddleware((auth, request) => {
 export const config = {
   // Match only internationalized pathnames
   matcher: [
-    '/((?!api|_next|_vercel|.*\\..*).*)',
-    // However, match all pathnames within `/users`, optionally with a locale prefix
-    '/([\\w-]+)?/users/(.+)',
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
   ],
 };
