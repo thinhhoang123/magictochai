@@ -7,6 +7,7 @@ const handleI18nRouting = createMiddleware(routing);
 const isPublicRoute = createRouteMatcher([
   '/:locale/sign-in(.*)',
   '/:locale/sign-up(.*)',
+  '/api/webhooks/clerk',
 ]);
 
 export default clerkMiddleware((auth, request) => {
